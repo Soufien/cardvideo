@@ -20,9 +20,18 @@ angular.module('starter', ['ionic'])
       ionic.Platform.ready(function() {
         // hide the status bar using the StatusBar plugin
         StatusBar.hide();
-/*          document.getElementById('video').src = "http://5.153.32.122/videos/therelaxatron2.mp4";
-          document.getElementById('video').setAttribute('crossorigin', 'anonymous');
-          document.getElementById('video').load(); // must call after setting/changing source
-          document.getElementById('video').play();*/
       });
-    });
+    }).config(['$provide', function($provide) {
+        $provide.decorator("$exceptionHandler", ['$delegate', function($delegate) {
+            return function(exception, cause) {
+                $delegate(exception, cause);
+
+                // Decorating standard exception handling behaviour by sending exception to crashlytics plugin
+                var message = exception.toString();
+                // Here, I rely on stacktrace-js (http://www.stacktracejs.com/) to format exception stacktraces before
+                // sending it to the native bridge
+                var stacktrace = $window.printStackTrace({e: exception});
+                navigator.crashlytics.logException("ERROR: "+message+", stacktrace: "+stacktrace);
+            };
+        }]);
+    }]);

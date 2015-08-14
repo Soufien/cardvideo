@@ -33,6 +33,7 @@ var timing = {showTiming: false, // Switch to true to show frame times in the co
 var container, playButton, muteButton, loopButton, fullScreenButton,
     seekBar, videoSelect, projectionSelect, canvas, video,
     leftLoad, rightLoad, leftPlay, rightPlay, playL, playR;
+
 var videoObjectURL = null;
 
 function initElements() {

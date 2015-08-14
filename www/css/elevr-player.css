@@ -61,8 +61,8 @@ a:active {
   width: 50%;
   float: left;
   position: relative;
-  top: 43%;
-  left: 2%;
+  top: 25%;
+  right: 5%;
   z-index: 1;
 }
 
@@ -70,8 +70,8 @@ a:active {
   width: 50%;
   float: right;
   position: relative;
-  top: 43%;
-  right: 2%;
+  top: 25%;
+  right: 31%;
   z-index: 1;
 }
 
@@ -88,16 +88,16 @@ a:active {
   padding: 0 10px;
   opacity: .9;
   height: 30px;
-  background-color: rgb(237,25,88);
+  background-color: rgb(144, 105, 237);
 
-  background: -webkit-linear-gradient(left top, rgb(190,25,141), rgb(237,25,88));
-  background: -o-linear-gradient(bottom right, rgb(190,25,141), rgb(237,25,88));
-  background: -moz-linear-gradient(bottom right, rgb(190,25,141), rgb(237,25,88));
-  background: linear-gradient(to bottom right, rgb(190,25,141), rgb(237,25,88));
+  background: -webkit-linear-gradient(left top, rgb(127, 188, 237), rgb(76, 61, 237));
+  background: -o-linear-gradient(bottom right, rgb(127, 188, 237), rgb(76, 61, 237));
+  background: -moz-linear-gradient(bottom right, rgb(127, 188, 237), rgb(76, 61, 237));
+  background: linear-gradient(to bottom right, rgb(127, 188, 237), rgb(76, 61, 237));
 }
 
 #seek-bar {
-	width: 35%;
+	width: 85%;
   float: left;
   margin-top: 3px;
 }
