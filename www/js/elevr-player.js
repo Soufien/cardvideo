@@ -99,4 +99,6 @@ function runEleVRPlayer() {
     video.addEventListener("canplaythrough", controls.loaded);
     video.addEventListener("ended", controls.ended);
   }
+
+    controls.fullscreen();
 }

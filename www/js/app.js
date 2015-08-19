@@ -19,19 +19,6 @@ angular.module('starter', ['ionic'])
 }).controller('cardviewoCtrl', function($scope) {
       ionic.Platform.ready(function() {
         // hide the status bar using the StatusBar plugin
-        StatusBar.hide();
+        //StatusBar.hide();
       });
-    }).config(['$provide', function($provide) {
-        $provide.decorator("$exceptionHandler", ['$delegate', function($delegate) {
-            return function(exception, cause) {
-                $delegate(exception, cause);
-
-                // Decorating standard exception handling behaviour by sending exception to crashlytics plugin
-                var message = exception.toString();
-                // Here, I rely on stacktrace-js (http://www.stacktracejs.com/) to format exception stacktraces before
-                // sending it to the native bridge
-                var stacktrace = $window.printStackTrace({e: exception});
-                navigator.crashlytics.logException("ERROR: "+message+", stacktrace: "+stacktrace);
-            };
-        }]);
-    }]);
+    });
